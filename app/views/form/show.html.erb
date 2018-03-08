@@ -1,0 +1,50 @@
+<header>
+  <h1 class="title">あめちゃん</h1>
+  <p class="desc">大阪のおばちゃんが作るご意見版</p>
+</header>
+
+<div class="form">
+  <%=form_tag("/form/submit") do%>
+
+    <%if @error_message.present?%>
+      <div class="error-message">
+        <%=@error_message%>
+      </div>
+    <%end%>
+    <div class="question1">
+      <p>思ってること全部入力してや！</p>
+      <input type="text" name="content" value="<%=@content%>" class="input-text">
+    </div>
+
+    <div class="question2">
+      <p class="question">あんたの意見、だれにとどける？</p>
+      <div class="submit-select">
+        <input type="radio" name="submit" value=1> 施設の管理者
+        <input type="radio" name="submit" value=2 checked> 全国の人
+      </div>
+    </div>
+
+    <div class="question1">
+      <p class="question">あんたの年代をえらんでや</p>
+      <select class="age-select" name="age">
+        <option value="0">年代をえらんでや！</option>
+        <option value="10">10代</option>
+        <option value="20">20代</option>
+        <option value="30">30代</option>
+        <option value="40">40代</option>
+        <option value="50">50代</option>
+        <option value="60">60代以上</option>
+      </select>
+    </div>
+
+    <div class="question2">
+      <p class="question">あんたの性別を選んでや</p>
+      <div class="sex-select">
+        <input type="radio" name="sex" value="1" checked > 男
+        <input type="radio" name="sex" value="2"> 女
+      </div>
+    </div>
+
+    <input type="submit" value="送信" class="submit-btn">
+  <%end%>
+</div>
