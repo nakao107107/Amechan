@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'user/like'
+
   get 'claims/search'
 
   get "form/test"=>"form#test"
